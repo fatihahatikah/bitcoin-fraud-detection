@@ -237,7 +237,7 @@ if uploaded_file is not None:
         # Display the dataset with predictions
         st.write("Predictions:")
         #st.write(result)
-        st.dataframe(data['fraud_prediction'].style.highlight_max(axis=0))
+        st.dataframe(data['fraud_prediction'])
 
         # Provide an option to download the dataset with predictions
         @st.cache_data
