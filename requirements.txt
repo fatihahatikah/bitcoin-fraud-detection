@@ -6,4 +6,3 @@ joblib
 tensorflow
 xgboost
 matplotlib
-sklearn
