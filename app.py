@@ -5,7 +5,7 @@ import tensorflow as tf
 from tensorflow.keras.models import load_model
 import matplotlib.pyplot as plt
 import os
-from scikit-learn.svm import SVC
+from sklearn.svm import SVC
 
 # Function to load the best model
 def load_best_model():
