@@ -54,7 +54,7 @@ if uploaded_file is not None:
     # required_columns = model.input_names if hasattr(model, 'input_names') else model.feature_names_in_
 
     required_columns = [
-        "Time step",
+        #"Time step",
         "Local_feature_1",
         "Local_feature_2",
         "Local_feature_3",
