@@ -186,9 +186,9 @@ if uploaded_file is not None:
         input_data = data[required_columns]
 
         # Make predictions
-        model_type = "Deep Learning" if isinstance(model, tf.keras.Model) else "Other"
-        predictions = make_prediction(model, input_data, model_type)
-        #predictions = predictResult(model,input_data)
+        #model_type = "Deep Learning" if isinstance(model, tf.keras.Model) else "Other"
+        #predictions = make_prediction(model, input_data, model_type)
+        predictions = predictResult(model, input_data)
 
         # Add the predictions to the dataset
         data['fraud_prediction'] = predictions
