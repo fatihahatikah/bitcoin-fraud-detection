@@ -19,10 +19,7 @@ def make_prediction(model, input_data, model_type):
         predictions = model.predict(input_df)
         predictions = (predictions > 0.5).astype(int) + 1  # Adjusting the predicted class values
     else:
-        if input_data.shape[1] != model.n_features_in_:
-            raise ValueError(f"Model expects {model.n_features_in_} features, but input data has {input_data.shape[1]} features.")
-        else:
-            predictions = model.predict(input_data)
+        predictions = model.predict(input_data)
     return predictions
 
 def predictResult(model, input_data):
