@@ -236,7 +236,7 @@ if uploaded_file is not None:
 
         # Display the dataset with predictions
         st.write("Predictions:")
-        st.write(data['fraud_prediction'])
+        st.write(data)
 
         # Provide an option to download the dataset with predictions
         @st.cache_data
