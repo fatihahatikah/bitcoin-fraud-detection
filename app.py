@@ -8,7 +8,7 @@ import os
 
 # Function to load the best model
 def load_best_model():
-    model = joblib.load('./saved_model/svm_model.pkl')
+    model = joblib.load('./saved_model/best_model.pkl')
     return model
 
 # Function to make predictions
@@ -20,7 +20,6 @@ def make_prediction(model, input_data, model_type):
     else:
         predictions = model.predict(input_data)
     return predictions
-
 
 def predictResult(model, input_data):
     predictions = model.predict(input_data)
@@ -186,9 +185,9 @@ if uploaded_file is not None:
         input_data = data[required_columns]
 
         # Make predictions
-        #model_type = "Deep Learning" if isinstance(model, tf.keras.Model) else "Other"
-        #predictions = make_prediction(model, input_data, model_type)
-        predictions = predictResult(model,input_data)
+        model_type = "Deep Learning" if isinstance(model, tf.keras.Model) else "Other"
+        predictions = make_prediction(model, input_data, model_type)
+        #predictions = predictResult(model,input_data)
 
         # Add the predictions to the dataset
         data['fraud_prediction'] = predictions
