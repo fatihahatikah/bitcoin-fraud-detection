@@ -22,9 +22,9 @@ def make_prediction(model, input_data, model_type):
         predictions = model.predict(input_data)
     return predictions
 
-def predictResult(model, input_data):
-    predictions = model.predict(input_data)
-    return predictions
+#def predictResult(model, input_data):
+#    predictions = model.predict(input_data)
+#    return predictions
 
 # Load the best model
 model = load_best_model()
