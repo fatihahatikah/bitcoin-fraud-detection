@@ -19,7 +19,6 @@ def make_prediction(model, input_data, model_type):
         predictions = model.predict(input_df)
         predictions = (predictions > 0.5).astype(int) + 1  # Adjusting the predicted class values
     else:
-        input_df = pd.DataFrame(input_data)
         predictions = model.predict(input_data)
     return predictions
 
