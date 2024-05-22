@@ -20,8 +20,9 @@ def make_prediction(model, input_data, model_type):
         predictions = (predictions > 0.5).astype(int) + 1  # Adjusting the predicted class values
     else:
         input_df = pd.DataFrame(input_data)
-        input_df = input_df.drop(columns=['txId', 'class', 'Time step'])
-        predictions = model.predict(input_df)
+        input = input_df.drop(['txId', 'class', 'Time step'], axis='columns')
+        #input_df = input_df.drop(columns=['txId', 'class', 'Time step'])
+        predictions = model.predict(input)
     return predictions
 
 #def predictResult(model, input_data):
