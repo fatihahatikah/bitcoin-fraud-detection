@@ -25,9 +25,9 @@ def make_prediction(model, input_data, model_type):
         predictions = model.predict(input)
     return predictions
 
-#def predictResult(model, input_data):
-#    predictions = model.predict(input_data)
-#    return predictions
+def predictResult(model, input_data):
+    predictions = model.predict(input_data)
+    return predictions
 
 # Load the best model
 model = load_best_model()
@@ -227,9 +227,9 @@ if uploaded_file is not None:
         input_data = data[required_columns]
 
         # Make predictions
-        model_type = "Deep Learning" if isinstance(model, tf.keras.Model) else "Other"
-        predictions = make_prediction(model, input_data, model_type)
-        #predictions = predictResult(model, input_data)
+        #model_type = "Deep Learning" if isinstance(model, tf.keras.Model) else "Other"
+        #predictions = make_prediction(model, input_data, model_type)
+        predictions = predictResult(model, input_data)
 
         # Add the predictions to the dataset
         data['fraud_prediction'] = predictions
